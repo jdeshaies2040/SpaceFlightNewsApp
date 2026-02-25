@@ -33,11 +33,15 @@ import com.example.spaceflightnewsapp.viewmodel.NewsState
 import com.example.spaceflightnewsapp.viewmodel.NewsViewModel
 import kotlin.getValue
 import androidx.compose.runtime.getValue
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    private val viewModel: NewsViewModel by viewModels()
+    //private val viewModel: NewsViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,8 +49,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             SpaceFlightNewsAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    val newsViewModel: NewsViewModel = hiltViewModel()
                     NewsScreen(
-                        viewModel = viewModel,
+                        viewModel = newsViewModel,
                         modifier = Modifier.padding(innerPadding)
                     )
                 }

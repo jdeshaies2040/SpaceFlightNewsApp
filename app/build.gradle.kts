@@ -1,6 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+
+    // Apply the KSP plugin
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -64,6 +68,14 @@ dependencies {
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation("io.coil-kt:coil-compose:2.6.0")
 
+    implementation(libs.hilt)
+    ksp(libs.hilt.compiler) // Use `ksp` instead of `kapt`
+    implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.3.0")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+
+    implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.3.0")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)

@@ -5,12 +5,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.spaceflightnewsapp.repository.NewsRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 // Manual constructor injection
 // TODO: Hilt DI
-class NewsViewModel(private val newsRepository: NewsRepository = NewsRepository()): ViewModel() {
-
+//class NewsViewModel(private val newsRepository: NewsRepository = NewsRepository()): ViewModel() {
+@HiltViewModel
+class NewsViewModel @Inject constructor(private val newsRepository: NewsRepository): ViewModel() {
     private val _newsState = MutableLiveData<NewsState>(NewsState.Loading)
     val newsState: LiveData<NewsState> = _newsState
 
