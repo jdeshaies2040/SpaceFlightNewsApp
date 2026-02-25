@@ -26,13 +26,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.unit.dp
-import coil3.compose.AsyncImage
+//import coil3.compose.AsyncImage
 import com.example.spaceflightnewsapp.model.Result
 import com.example.spaceflightnewsapp.ui.theme.SpaceFlightNewsAppTheme
 import com.example.spaceflightnewsapp.viewmodel.NewsState
 import com.example.spaceflightnewsapp.viewmodel.NewsViewModel
 import kotlin.getValue
 import androidx.compose.runtime.getValue
+import coil.compose.AsyncImage
 
 class MainActivity : ComponentActivity() {
 

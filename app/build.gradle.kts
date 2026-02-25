@@ -62,7 +62,7 @@ dependencies {
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
-    implementation(libs.coil.compose)
+    implementation("io.coil-kt:coil-compose:2.6.0")
 
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
